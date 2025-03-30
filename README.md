@@ -1,99 +1,48 @@
-# Lab Work: Singleton and Adapter Patterns
+# 🎯 Homework 4: Advanced Structural Patterns – Singleton & Adapter 🎯
 
-## Implementation of Two Structural Design Patterns:
-1. **Singleton** — Global Configuration Manager.
-2. **Adapter** — Integration of a Legacy Chat System into a Modern Application.
+## 📌 Project Overview  
 
----
+This project demonstrates the application of two important structural design patterns: **Singleton** and **Adapter**.
 
-## Requirements
-- **Java JDK 11+**
-- **Git** (for cloning the repository)
+- **Singleton** 🏆 is used to implement a global configuration manager (`ConfigurationManager`), ensuring a single instance that provides access to configuration settings.  
+- **Adapter** 🔄 is applied to integrate a legacy chat system (`LegacyChatService`) into a modern chat interface (`ChatService`), converting calls from the new interface to the legacy system.
 
 ---
 
-## Installation and Execution
+## 📂 Project Structure  
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Madiyarr777/solution_homework_4.git
-cd solution_homework_4
-```
+The project consists of the following files:
 
-### 2. Compile and Run
+- **`ConfigurationManager.java`** 🛠️  
+  Implements the Singleton pattern for a global configuration manager. It loads and stores key-value configuration settings and provides methods for retrieving and printing them.
 
-#### Singleton (Configuration Manager):
-```bash
-javac src/ConfigurationManager.java src/ConfigManagerDemo.java
-java -cp src ConfigManagerDemo
-```
+- **`ConfigManagerDemo.java`** 🖥️  
+  A demo class to test the functionality of `ConfigurationManager`.
 
-#### Adapter (Chat Service):
-```bash
-javac src/ChatService.java src/LegacyChatService.java src/ChatServiceAdapter.java src/ChatAdapterDemo.java
-java -cp src ChatAdapterDemo
-```
+- **`ChatService.java`** 💬  
+  Defines the interface for the modern chat system with a `sendMessage(String message)` method.
 
----
+- **`LegacyChatService.java`** 🏛️  
+  Simulates an old chat system. The `sendLegacyMessage(String message)` method outputs messages with the prefix `"Legacy Chat:"`.
 
-## Sample Outputs
+- **`ChatServiceAdapter.java`** 🔧  
+  An adapter that implements `ChatService` and wraps around `LegacyChatService`, converting calls from the new interface to the legacy system.
 
-### Configuration (ConfigManagerDemo):
-```bash
-Server Capacity: 200
-UI Theme: dark
-=== Active Configurations ===
-serverCapacity → 200
-themeColor → dark
-autosaveInterval → 30min
-```
-
-### Chat (ChatAdapterDemo):
-```bash
-[Legacy System] New message received!
-```
+- **`ChatAdapterDemo.java`** 🎭  
+  A demo class to test the adapter, sending a message through `ChatServiceAdapter`.
 
 ---
 
-## Project Structure
-```bash
-solution_homework_4/
-└── src/
-    ├── ConfigurationManager.java    # Singleton implementation
-    ├── ConfigManagerDemo.java       # Configuration demo
-    ├── ChatService.java             # Modern chat interface
-    ├── LegacyChatService.java       # Legacy chat system
-    ├── ChatServiceAdapter.java      # Adapter class
-    └── ChatAdapterDemo.java         # Chat demo
-```
+## ✅ Prerequisites  
+
+- Installed **Java Development Kit (JDK)**  
+- Access to a **terminal/command prompt**  
 
 ---
 
-## How It Works?
+## ⚙️ Compilation and Setup  
 
-### Singleton (ConfigurationManager)
-- Ensures a single instance of the configuration manager.
-- Stores configurations in a HashMap.
-
-#### Usage:
-```java
-ConfigurationManager config = ConfigurationManager.getInstance();
-String capacity = config.getConfig("serverCapacity"); // returns "200"
-```
-
-### Adapter (ChatServiceAdapter)
-- Adapts the `sendMessage()` method to the legacy format.
-
-#### Logic:
-```java
-// Modern call:
-chatService.sendMessage("Hello");
-
-// Translates to:
-legacyService.sendLegacyFormat("Hello"); // Output: "[Legacy System] Hello"
-```
-
----
-
-## License
-Open-source code for educational purposes.
+1. Place all files in a single directory (e.g., `src`).  
+2. Open a terminal and navigate to the directory:  
+   ```bash
+   cd path/to/src
