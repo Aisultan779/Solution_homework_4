@@ -48,23 +48,16 @@ The project consists of the following files:
    cd path/to/src
 Compile all Java files:
 
-bash
-Копировать
-Редактировать
 javac *.java
 🚀 Usage
 🎯 Running the ConfigurationManager Demo
 Run the following command:
 
-bash
-Копировать
-Редактировать
+
 java ConfigManagerDemo
 📌 Expected Output:
 
-rust
-Копировать
-Редактировать
+
 maxPlayers: 100
 Configuration settings:
 maxPlayers -> 100
@@ -73,15 +66,10 @@ gameDifficulty -> medium
 💬 Running the ChatServiceAdapter Demo
 Run the following command:
 
-bash
-Копировать
-Редактировать
+
 java ChatAdapterDemo
 📌 Expected Output:
 
-yaml
-Копировать
-Редактировать
 Legacy Chat: Hello world!
 📝 Class Descriptions
 ConfigurationManager.java
@@ -121,3 +109,4 @@ Each class is designed with single responsibility, making the code more modular,
 
 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
